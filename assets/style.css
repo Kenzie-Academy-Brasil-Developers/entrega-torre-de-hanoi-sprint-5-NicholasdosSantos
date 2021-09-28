@@ -1,0 +1,47 @@
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+#mainContainer {
+    width: 858px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    border: solid 1px blue;
+
+}
+
+.startBox {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border: solid 1px red;  
+    height: 100%;
+    width: 33.333%;
+}
+
+.middleBox {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border: solid 1px red; 
+    height: 100%;
+    width: 33.333%  
+}
+
+.endBox {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border: solid 1px red; 
+    height: 100%;
+    width: 33.333%   
+}
+
+.rod {
+    width: 10px;
+    height: 200px;
+    background-color: black;
+}
