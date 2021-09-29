@@ -26,36 +26,52 @@ let clickControl = false;
 let currentDisk = null;
 
 
-function gameMoviment(event){
+function gameMovement(event){
 
     let selectedSpace = event.currentTarget
-    
     let lastDisk = selectedSpace.lastElementChild
-
+    
    // Primeiro clique - selecionar peça (currentPiece) FEITO
    // Segundo clique - transportar peça para outro espaço (selectedSpace) FEITO
     
-    if(clickControl === false){
+   //Estrutura para selecionar peça
+
+    if(clickControl === false && lastDisk !== null){
         clickControl = true
         currentDisk = lastDisk
     }else{
-        clickControl = false;
-        
+        clickControl = false
+
         if(selectedSpace.childElementCount > 0 && currentDisk.clientWidth < lastDisk.clientWidth){
             selectedSpace.appendChild(currentDisk);
         }else if(selectedSpace.childElementCount > 0 && currentDisk.clientWidth > lastDisk.clientWidth){
-            alert('Joga Inválida');
+            alert('Jogada Inválida');
         }else{
+            if (currentDisk !== null) {
             selectedSpace.appendChild(currentDisk);
+            }
         }
-        
+        currentDisk = null;
     }
 
     
-   
+   console.log(clickControl)
+   console.log(currentDisk)
 }
 
-boxes.forEach(towerBox => towerBox.addEventListener('click', gameMoviment))
+
+/*Essa função adiciona um event listener de click para cada uma 
+das torres. forEach vai percorrer cada um dos elementos armazenados
+em "boxes", adicionar um interceptador de clique em cada um dos elementos
+e disparar a função gameMoviment, que basicamente:
+    1. seleciona o último filho de cada box com um clique;
+    2. move o elemento com outro clique para o box de destino;
+    3. somente se as condições forem satisfeitas (somente uma peça
+    menor pode ser sobreposta a uma peça menor ou movida livremente
+    para um box vazio)
+*/
+
+boxes.forEach(towerBox => towerBox.addEventListener('click', gameMovement))
 
 
 
