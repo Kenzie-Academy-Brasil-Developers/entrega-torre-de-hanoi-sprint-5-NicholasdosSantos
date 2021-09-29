@@ -30,30 +30,28 @@ function gameMoviment(event){
 
     let selectedSpace = event.currentTarget
     
-    let currentPiece = selectedSpace.lastElementChild
-    console.log(currentPiece)
-   
-    
-    let towerChilds = selectedSpace.childElementCount
+    let lastDisk = selectedSpace.lastElementChild
+
+   // Primeiro clique - selecionar peça (currentPiece) FEITO
+   // Segundo clique - transportar peça para outro espaço (selectedSpace) FEITO
     
     if(clickControl === false){
         clickControl = true
-        currentDisk = currentPiece
+        currentDisk = lastDisk
     }else{
         clickControl = false;
-        selectedSpace.appendChild(currentDisk);
+        
+        if(selectedSpace.childElementCount > 0 && currentDisk.clientWidth < lastDisk.clientWidth){
+            selectedSpace.appendChild(currentDisk);
+        }else if(selectedSpace.childElementCount > 0 && currentDisk.clientWidth > lastDisk.clientWidth){
+            alert('Joga Inválida');
+        }else{
+            selectedSpace.appendChild(currentDisk);
+        }
+        
     }
 
-    /*
-    Primeiro clique - selecionar peça (currentPiece) FEITO
-    Segundo clique - transportar peça para outro espaço (selectedSpace) FEITO
-
-    Formular estrutura condicional limitando o movimento das peças
-    a peça maior não pode sobrepor a uma menor(currentPiece.clientWidth)
-
-    Condição de vitória - todas as peças no endBoxs
-
-    */
+    
    
 }
 
