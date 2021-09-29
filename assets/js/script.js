@@ -1,8 +1,22 @@
-//Selecionando os elementos HTML
+//Capturando Section no DOM
 
-const startBox = document.querySelector(".startBox");
-const middleBox = document.querySelector(".middleBox");
-const endBox = document.querySelector(".endBox");
+const mainContainer = document.querySelector('section');
+
+//Criando torres no DOM e acrecentando classes
+
+const startBox = document.createElement('div');
+const middleBox = document.createElement('div');
+const endBox = document.createElement('div');
+
+startBox.className = 'startBox';
+middleBox.className = 'middleBox';
+endBox.className = 'endBox';
+
+//Incluindo torres como filhas de mainContainer
+
+mainContainer.appendChild(startBox);
+mainContainer.appendChild(middleBox);
+mainContainer.appendChild(endBox);
 
 //Criando peças
 
@@ -59,9 +73,31 @@ function gameMovement(event){
         currentDisk = null;
     }
 
+    //Condição de vitória
+
+    if(boxes[2].childElementCount === 4){
+        popupWin()
+    }
     
-//    console.log(clickControl)
-//    console.log(currentDisk)
+    function popupWin(){
+        const popupWin = document.createElement('div');
+        const text = document.createElement('p');
+        const btn = document.createElement('button');
+
+        mainContainer.appendChild(popupWin);
+        popupWin.appendChild(text);
+        popupWin.appendChild(btn);
+        popupWin.id = 'winner-popup';
+        
+
+        text.className = 'text-popups';
+        btn.className = 'btn-popups';
+        text.innerText = 'Parabéns, Você Ganhou!';
+        btn.innerText = 'Recarregar';
+
+    }
+    //    console.log(clickControl)
+    //    console.log(currentDisk)
 }
 
 //Aplicação do método forEach na variável que armazena todas as divs do
