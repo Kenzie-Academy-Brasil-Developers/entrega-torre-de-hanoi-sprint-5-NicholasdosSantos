@@ -40,8 +40,24 @@ body {
     width: 33.333%   
 }
 
-.rod {
-    width: 10px;
-    height: 200px;
-    background-color: black;
+#piece-4{
+    height: 20px;
+    width: 40px;
+    background-color: aqua;
+ 
+}
+#piece-3{
+    height: 20px;
+    width: 50px;
+    background-color: aqua;
+}
+#piece-2{
+    height: 20px;
+    width: 60px;
+    background-color: aqua;
+}
+#piece-1{
+    height: 20px;
+    width: 70px;
+    background-color: aqua;
 }
