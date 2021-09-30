@@ -1,88 +1,170 @@
 body {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
+    background-color: #f9eac3;
 }
+
+h1 {
+    font-size: 40px;
+    color: #b38b6D;
+}
+
+#my-reset-button {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    border: transparent;
+    border-radius: 8px;
+    background-color:  #b38b6D;
+}
+
 #mainContainer {
-    width: 858px;
-    height: 400px;
+    width: 350px;
+    height: 250px;
     display: flex;
     flex-direction: row;
-    border: solid 1px blue;
-
+    justify-content: space-evenly;
+    border: transparent;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 .startBox {
+    background-color: rgba(255,255,242,0.2);
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    border: solid 1px red;  
+    border: dashed 1px #b38b6D; 
+    border-radius: 8px; 
     height: 100%;
-    width: 33.333%;
+    width: 30%;
 }
 
 .middleBox {
+    background-color: rgba(255,255,242,0.2);
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    border: solid 1px red; 
+    border: dashed 1px #b38b6D; 
+    border-radius: 8px; 
     height: 100%;
-    width: 33.333%  
+    width: 30%;
+
 }
 
 .endBox {
+    background-color: rgba(255,255,242,0.2);
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    border: solid 1px red; 
+    border: dashed 1px #b38b6D; 
+    border-radius: 8px; 
     height: 100%;
-    width: 33.333%   
+    width: 30%;
 }
 
 #piece-4{
     height: 20px;
     width: 40px;
-    background-color: aqua;
- 
+    background-color: #e8dcb5;
+    border-radius: 8px;
+    border-top: solid 3px pink;
 }
+
 #piece-3{
     height: 20px;
     width: 50px;
-    background-color: aqua;
+    background-color: #d5b895;
+    border-radius: 8px;
+    border-top: solid 3px pink;
 }
 #piece-2{
     height: 20px;
     width: 60px;
-    background-color: aqua;
+    background-color: #c19770;
+    border-radius: 8px;
+    border-top: solid 3px pink;
 }
 #piece-1{
     height: 20px;
     width: 70px;
-    background-color: aqua;
+    background-color: #a67a5b;
+    border-radius: 8px;
+    border-top: solid 3px pink;
 }
 
 /* Pop-up vencedor */
 
 #winner-popup{
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-
     width: 200px;
     height: 200px;
-    background-color: brown;
+    background-color: rgb(255,255,242);
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 9px 7px 10px -4px rgba(89,89,89,0.58);
 }
 
 .text-popups{
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #b38b6D;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     font-size: 20px;
+    margin: 25px 40px;
 }
 .btn-popups{
-    width: 40px;
-    height: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    border: transparent;
+    border-radius: 8px;
+    background-color:  #b38b6D;
+    margin-top: 20px;
+    /* width: 40px;
+    height: 10px; */
 }
 
+#invalid-popup {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255,255,242);
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 9px 7px 10px -4px rgba(89,89,89,0.58);
+}
+
+.invisible {
+    
+}
+
+#btn-close{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    border: transparent;
+    border-radius: 8px;
+    background-color:  #b38b6D;
+    margin-top: 20px;
+    /* width: 40px;
+    height: 10px; */
+}
