@@ -64,7 +64,7 @@ function gameMovement(event){
         if(selectedSpace.childElementCount > 0 && currentDisk.clientWidth < lastDisk.clientWidth){
             selectedSpace.appendChild(currentDisk);
         }else if(selectedSpace.childElementCount > 0 && currentDisk.clientWidth > lastDisk.clientWidth){
-            alert('Jogada Inválida');
+            invalidPopUp();
         }else{
             if (currentDisk !== null) {
             selectedSpace.appendChild(currentDisk);
@@ -92,20 +92,36 @@ function gameMovement(event){
 
         text.className = 'text-popups';
         btn.className = 'btn-popups';
-        text.innerText = 'Parabéns, Você Ganhou!';
-        btn.innerText = 'Recarregar';
+        text.innerText = 'Congrats! You win!';
+        btn.innerText = 'Play again!';
 
+
+        btn.addEventListener('click', reset = () => {
+        location.reload()
+        });
     }
-    //    console.log(clickControl)
-    //    console.log(currentDisk)
+    
 }
+
+function invalidPopUp(){
+    invalidMovement.style.display = 'block';
+        
+    btnClose.addEventListener('click', function(){
+        invalidMovement.style.display = 'none';
+    });
+
+}
+
+//Button reset
+
+const myResetButton = document.getElementById('my-reset-button');
+
+myResetButton.addEventListener('click', reset = () => {
+        location.reload()
+        });
 
 //Aplicação do método forEach na variável que armazena todas as divs do
 //tabuleiro seguida de função towerBox, que adicionará às divs o interceptador
 //de clique que executará a função gameMovement.
 
 boxes.forEach(towerBox => towerBox.addEventListener('click', gameMovement))
-
-
-
-
